@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="Sandbox/Sandbox.vcxproj" Id="62e154b8-b210-4c1c-a1f7-28d6724276f8" />
+  <Project Path="Taurida/Taurida.vcxproj" Id="fa9dae7c-5c83-4770-a93c-d5addcceb8c3" />
+</Solution>
