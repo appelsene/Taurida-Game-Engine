@@ -1,5 +1,6 @@
 #pragma once
 
+#include "trdpch.h"
 #include "Taurida/Core.h"
 
 namespace Taurida {
