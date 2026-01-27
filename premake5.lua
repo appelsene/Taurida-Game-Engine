@@ -13,8 +13,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Taurida/vendor/GLFW/include"
+IncludeDir["Glad"] = "Taurida/vendor/Glad/include"
 
 include "Taurida/vendor/GLFW"
+include "Taurida/vendor/Glad"
+
+project "Glad"
+	buildoptions "/utf-8"
 
 project "GLFW"
 	buildoptions "/utf-8"
@@ -40,12 +45,14 @@ project "Taurida"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links 
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -59,7 +66,8 @@ project "Taurida"
 		defines 
 		{
 			"TRD_PLATFORM_WINDOWS",
-			"TRD_BUILD_DLL"
+			"TRD_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands 
